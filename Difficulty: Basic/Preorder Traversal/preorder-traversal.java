@@ -1,0 +1,29 @@
+/* Structure of Tree Node
+class Node {
+    int data;
+    Node left;
+    Node right;
+
+    Node(int data) {
+        this.data = data;
+        left = right = null;
+    }
+}*/
+
+class Solution {
+    public void dfs(Node root, ArrayList<Integer> ans) {
+        if(root == null) return ;
+        ans.add(root.data);
+        dfs(root.left,ans);
+        dfs(root.right, ans);
+    
+        
+    }
+    
+    public ArrayList<Integer> preOrder(Node root){
+      ArrayList<Integer> ans = new ArrayList<>();
+      dfs(root,ans);
+      return ans;
+    }
+     
+}
